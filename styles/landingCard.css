@@ -1,0 +1,102 @@
+@media screen and (max-width: 992px){
+	div.card{
+		min-width:26em;
+	}
+}
+.card{
+	min-width:30em;
+	max-height:25em;
+	min-height:25em;
+	font-weight: normal;
+	color: #666;
+	text-align:center;
+	background-color:transparent;
+	border-color:rgb(233, 84, 32);
+	border-width:2px;
+	box-shadow: 0 0 5px rgba(233, 84, 32, 1);
+}
+.card-block{
+	width:100%;
+	padding-left:10%;
+	padding-right:10%;
+	padding-top:0.4em;
+	padding-bottom:0px;
+	position:absolute;
+}
+label{
+	margin-top:3%;
+	font-size:1em;
+	color: #aaa;
+}
+.btn-custom{
+	color:#aaa;
+	background-color:transparent;
+	border-width:2px;
+	border-color:rgb(233, 84, 32);
+	box-shadow: 0 0 5px rgba(233, 84, 32, 1);
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.btn-custom:hover{
+	background-color:rgb(233, 84, 32);
+}
+input[type=text]:focus, input[type=password]:focus {
+  	box-shadow: 0 0 5px rgba(233, 84, 32, 1);
+}
+input[type=checkbox].css-checkbox {
+	position:absolute; 
+	z-index:-1000; left:-1000px; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height:1px; width:1px; 
+	margin:-1px; 
+	padding:0; 
+	border:0;
+}
+input[type=checkbox].css-checkbox + label.css-label {
+	padding-left:23px;
+	height:18px; 
+	display:inline-block;
+	line-height:18px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:1em;
+	vertical-align:middle;
+	cursor:pointer;
+}
+input[type=checkbox].css-checkbox:checked + label.css-label {
+	background-position: 0 -18px;
+}
+label.css-label {
+	background-image:url(/assets/csscheckbox_e6364785bfe886ff49a404b90dfce30f.png);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+::-webkit-input-placeholder { color: #bbb; } 	/* WebKit */
+:-moz-placeholder { color: #bbb; } 				/* Firefox 18- */
+::-moz-placeholder { color: #bbb; } 			/* Firefox 19+ */
+:-ms-input-placeholder { color: #bbb; } 		/* IE 10+ */
+ngb-alert{
+	text-align:center;
+}
+.popoverMessage{
+	color:white;
+	
+}
+:host >>> .popover {
+    border-color:rgb(233, 84, 32);
+	/*color:rgba(233, 84, 32, 1);*/
+	/*border-width:2px;
+	box-shadow: 0 0 5px rgba(233, 84, 32, 1);*/
+	background-color:rgb(233, 84, 32);
+	text-align:center;
+}
+:host >>>  .popover.popover-top::after, .popover.bs-tether-element-bottom::after{
+	border-top-color:rgb(233, 84, 32);
+}
+:host >>>  .popover.popover-left::after, .popover.bs-tether-element-right::after{
+	border-left-color:rgb(233, 84, 32);
+}

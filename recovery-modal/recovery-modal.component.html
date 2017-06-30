@@ -1,0 +1,14 @@
+<div class="modal-body">
+	<div class="form-group">
+		<label for="register1">Registration e-mail</label>
+		<input type="text" placeholder="Enter your e-mail" class="form-control" id="emailRecoveryInput" autofocus #inputEmailRecovery>
+		<div class="col-8 offset-2" id="loginButtonDiv">
+			<ng-template #popoverRecovery><span class="popoverMessage">{{recoveryButtonPopoverMessage}}</span></ng-template>
+			<input type="button" class="btn btn-custom btn-block" value="Send e-mail" id="recoveryButton"
+			[ngbPopover]="popoverRecovery" placement="left" triggers="manual" #recoveryButton="ngbPopover"
+			(click)="sendRecovery(inputEmailRecovery.value)">
+		</div>
+	</div>
+	<label id="recoveryInfo">An e-mail with a link will be sent to you with a link to restore your password.</label>
+</div>
+

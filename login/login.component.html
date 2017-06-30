@@ -1,0 +1,57 @@
+<div class="card text-left">
+	<div class="card-block">
+		<div class="form-group">
+			<ng-template #popoverLogin><span class="popoverMessage">{{loginButtonPopoverMessage}}</span></ng-template>
+			<label for="register1">Username</label>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user-o fa-fw"></i></span>
+				<input type="text" placeholder="Enter your username" class="form-control" id="register1" #inputUser
+				(focus)="loginButton.close()">
+			</div>
+			<label for="register2">Password</label>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+				<input type="password" placeholder="Enter your password" class="form-control" id="register2" #inputPwd
+				(focus)="loginButton.close()">
+			</div>
+			<label id="pwdRecoverLinkLabel">
+				<a (click)="openRecoveryModal()" id="pwdRecoveryLink">Forgot your password? Click here.</a>
+			</label>
+			<div class = "row">
+				<div class="col-8 offset-2" id="loginButtonDiv">
+					<input type="button" class="btn btn-custom btn-block" value="Sign in" id="loginButton"
+					(click)="getLoginData(inputUser.value, inputPwd.value, inputRememberFlag.checked)"
+					[ngbPopover]="popoverLogin" placement="top" triggers="manual" #loginButton="ngbPopover"
+					(focusout)="loginButton.close()">
+				</div>
+			</div>
+			<div class="row" id="rememberMeDiv">
+				<div class="col-12">
+					<input type="checkbox" name="checkboxG2" id="checkboxG2" class="css-checkbox" #inputRememberFlag>
+					<label for="checkboxG2" class="css-label">Remember me</label>
+				</div>
+			</div>
+			<div class = "row">
+				<div class="col-12" [ngSwitch]="loginStatus">
+					<ngbd-alert-custom *ngSwitchDefault><span id="newAccountMsg">New to Apse? <a href="" 
+					[routerLink]="['/main',{outlets:{landingOutlet:['register']}}]" id="newAccountLink">Create an account.</a></span>
+					</ngbd-alert-custom>
+					<ngbd-alert-custom *ngSwitchCase="'NEW_ACCOUNT'">
+						Account creation successful, please log in.
+					</ngbd-alert-custom>
+					<ngbd-alert-custom *ngSwitchCase="'PASSWORD_RESET'">
+						Password reset, please log in.
+					</ngbd-alert-custom>
+					<ngbd-alert-custom *ngSwitchCase="'RECOVERY_OK'">
+						E-mail sent, please check your inbox.
+					</ngbd-alert-custom>
+					<ngbd-alert-custom class="red" *ngSwitchCase="'RECOVERY_FAIL'">
+						Invalid password recovery link!.
+					</ngbd-alert-custom>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

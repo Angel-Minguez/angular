@@ -1,0 +1,31 @@
+#pwdRecoveryLink{
+	color:#aaa;
+}
+#pwdRecoveryLink:hover{
+	text-decoration:none;
+	color:#666;
+}
+#loginButtonDiv{
+	padding-top:3%;
+}
+#newAccountLink{
+	color:rgb(233, 84, 32);
+}
+#newAccountMsgDiv{
+	padding-top:5%;
+	text-align:center;
+}
+#rememberMeDiv{
+	text-align:center;
+}
+#recoveryInfo{
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-bottom:5%;
+}
+.red{
+	color:red;
+}
+.green{
+	color:green;
+}

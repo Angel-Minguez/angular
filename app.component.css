@@ -1,0 +1,131 @@
+@media screen and (max-width: 992px){
+	div.navbar-collapse{
+		width:100%;
+	}
+	#selector{
+		visibility:hidden;
+	}
+	.nav-link{
+		font-size:1.25em;
+		padding-top:0px;
+	}
+	.navbar-nav{
+		text-align:right;
+		padding-right:3%;
+		width:100%;
+	}
+	#item1{
+		width:100%;
+	}
+	#item2{
+		width:100%;
+	}
+	#item3{
+		width:100%;
+	}
+	#item4{
+		width:100%;
+	}
+}
+nav {
+	padding-left:0px; 
+	padding-right:0px;
+	background-color:transparent;
+	border-bottom:1px solid #ddd;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+}
+#logo{
+	height:40px;
+}
+.navbar-brand{
+	margin-left:5%;
+	margin-right:0px;
+	padding:0px 0px 0px 0px;
+	width:25%;
+	font-size:15px;
+	transition: all 200ms ease-in-out;
+}
+.navbar-brand:hover{
+	/*color:white;*/
+}
+.navbar-collapse{
+	width:70%
+}
+ul{
+	width:50%;
+	text-align:center;
+}
+.landingNavItem{
+	width:25%;
+}
+.nav-link{
+	transition:color 200ms ease-in-out;
+	color:#aaa;
+	width:100%;
+	font-size:1.2em;
+	padding-left:0px;
+	padding-right:0px;
+}
+@keyframes slide_into{
+	0%	{ transform:translateX(-100vw);}
+	100%{ transform:translateX(0%);	}
+}
+#selector{
+	animation:0.5s ease-in-out slide_into;
+	height: 2px;
+	width:5%;
+	background-color:rgb(233, 84, 32);
+	transition: .150s ease-in-out;
+	position:absolute;
+	top:80%;
+	margin-left:1.875%;
+	box-shadow: 0 0 5px rgba(233, 84, 32, 1);
+	z-index:-1;
+}
+#componentContainer{
+	max-height:50vh;
+	max-width:50hh;
+	width:100%;
+}
+.dropdown-menu{
+	color:#666;
+	right:0;
+	left:auto;
+}
+.dropdown-item{
+	text-align:center;
+	padding-top:.75em;
+	padding-bottom:.75em;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:1em;
+}
+a.dropdown-item:hover{
+	background-color:rgb(233, 84, 32);
+	color:white;
+}
+.btn-custom{
+	color:#aaa;
+	background-color:transparent;
+	border-width:2px;
+	border-color:rgb(233, 84, 32);
+	box-shadow: 0 0 5px rgba(233, 84, 32, 1);
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.btn-custom-activated{
+	color:white;
+	background-color:rgb(233, 84, 32);	
+}
+#userLogo{
+	box-shadow: 0 0 5px rgba(233, 84, 32, 1);
+	border:2px solid rgb(233, 84, 32);	
+	width:2.5em;
+	padding-top:2.5em;
+	float:right;
+	border-radius:10%;
+}
+#userLogoContainer{
+	text-align:center;
+	padding-right:2%;
+}

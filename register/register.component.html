@@ -1,0 +1,47 @@
+<div id="container">
+	<div class="card text-left">
+		<div class="card-block">
+			<div class="form-group">
+				<label for="register1">Username</label>
+				<ng-template #popoverRegisterUserName><span class="popoverMessage">{{inputUserNamePopoverMessage}}</span></ng-template>
+				<div class="input-group">
+					<span class="input-group-addon" [ngbPopover]="popoverRegisterUserName" placement="left" triggers="manual" #inputNewUser="ngbPopover">
+						<i class="fa fa-user-o fa-fw"></i>
+					</span>
+					<input type="text" placeholder="Pick a username" class="form-control" #register1
+					(focus)="closePopovers()">
+				</div>				
+				<label for="register2">E-mail</label>
+				<ng-template #popoverRegisterUserMail><span class="popoverMessage">{{inputUserMailPopoverMessage}}</span></ng-template>
+				<div class="input-group">
+					<span class="input-group-addon"
+						[ngbPopover]="popoverRegisterUserMail" placement="left" triggers="manual" #inputNewMail="ngbPopover">
+						<i class="fa fa-envelope-o fa-fw"></i>
+						</span>
+					<input type="text" placeholder="Your e-mail address" class="form-control" #register2
+					(focus)="closePopovers()">
+				</div>
+				<label for="register3">Password</label>
+				<ng-template #popoverRegisterUserPwd><span class="popoverMessage">{{inputUserPwdPopoverMessage}}</span></ng-template>
+				<div class="input-group">
+					<span class="input-group-addon" 
+					[ngbPopover]="popoverRegisterUserPwd" placement="left" triggers="manual" #inputNewPwd="ngbPopover">
+						<i class="fa fa-key fa-fw"></i>
+					</span>
+					<input type="password" placeholder="Create a password" class="form-control" #register3
+					(focus)="closePopovers()">
+				</div>
+				<label id="passwordInfo" for="register2">Use at least eight characters and one digit</label>
+				<div class="row">
+					<div class="col-8 offset-2">
+						<ng-template #popoverRegisterButton><span class="popoverMessage">{{connectionError}}</span></ng-template>
+						<input type="button" class="btn btn-custom btn-block" value="Sign up for Apse" id="registerButton"
+						(click)="sendRegistration(register1.value, register2.value, register3.value)"
+						[ngbPopover]="popoverRegisterButton" placement="top" triggers="manual" #registerButton="ngbPopover"
+						(focusout)="closePopovers()">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

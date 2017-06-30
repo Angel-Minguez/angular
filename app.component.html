@@ -1,0 +1,41 @@
+<nav class="navbar navbar-toggleable-md navbar-light" [@flyIn]="'in'">
+	<button class="navbar-toggler navbar-toggler-right" type="button"
+	(click)="isCollapsed = !isCollapsed">
+		<span class="fa fa-bars"></span>
+	</button>
+	<a class="navbar-brand" href="#"><img id="logo" src="assets/logo.png"></a>
+	<div class="collapse navbar-collapse flex-row-reverse" [ngbCollapse]="isCollapsed">
+		<ul *ngIf="appUser!='N/A'" class="navbar-nav">
+			<li li class="landingNavItem"></li>
+			<li li class="landingNavItem"></li>
+			<li class="landingNavItem" id="userLogoContainer"><div #userLogo id="userLogo"></div></li>
+			<div id="userDropdown" ngbDropdown #userDropdown = ngbDropdown>
+				<button class="btn btn-custom" id="userDropdownButton" ngbDropdownToggle
+				(click)="activateUserDropdown()" (focusout)="dropdownActivated=false" 
+				[ngClass]="{'btn-custom-activated': dropdownActivated}">{{appUser}}
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" (click)="openUserProfileModal(content)">{{appUser}}'s profile</a>
+					<a class="dropdown-item">Action - 2</a>
+					<a class="dropdown-item" (click)="logOut()">Logout</a>
+				</div>
+			</div>
+		</ul>
+		<ul *ngIf="appUser=='N/A'" class="navbar-nav">
+			<li class="landingNavItem" id="item1" (click)="setActiveLink(0)" (mouseover)="setHoverLink(0)" (mouseleave)="setLeaveLink()">
+			<a class="nav-item nav-link" id="link" 
+			[routerLink]="['main',{outlets:{landingOutlet:['login', 'N/A']}}]" routerLinkActive="actived">Sign in</a></li>
+			<li class="landingNavItem" id="item2" (click)="setActiveLink(1)" (mouseover)="setHoverLink(1)" (mouseleave)="setLeaveLink()">
+			<a class="nav-item nav-link" id="link" 
+			[routerLink]="['main',{outlets:{landingOutlet:['register']}}]" routerLinkActive="actived">Sign up</a></li>
+			<li class="landingNavItem" id="item3" (click)="setActiveLink(2)" (mouseover)="setHoverLink(2)" (mouseleave)="setLeaveLink()">
+			<a class="nav-item nav-link" id="link" 
+			[routerLink]="" routerLinkActive="actived">About</a></li>
+			<li class="landingNavItem" id="item4" (click)="setActiveLink(3)" (mouseover)="setHoverLink(3)" (mouseleave)="setLeaveLink()">
+			<a class="nav-item nav-link" id="link" 
+			[routerLink]="" routerLinkActive="actived">Features</a></li>
+			<span id="selector" [ngStyle]="{'margin-left':selector[highLightedLink]}"></span>
+		</ul>
+	</div>
+</nav>
+<router-outlet></router-outlet>

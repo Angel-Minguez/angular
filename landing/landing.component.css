@@ -1,0 +1,49 @@
+@media screen and (max-width: 992px){
+	div#componentContainer{
+		padding-left:0px;
+		padding-right:0px;
+		padding-top:5em;
+		left:50%;
+		margin-left:-13em;
+	}
+	.display-4{
+		font-size:40px;
+		color:#666;
+	}
+	.lead{
+		font-size:16px;
+	}
+	hr{
+		margin-top:25em;
+	}
+	#feature-3{
+		
+	}
+}
+#componentContainer{
+	padding-left:10%;
+}
+#landingJumbo{
+	width:100%;
+	background-color:transparent;
+	padding-bottom:0px;
+	padding-left:0;
+	padding-right:0;
+}
+#landingText{
+	color:#666;
+}
+.card{
+	background-color:#eee;
+	color: #666;
+	margin-bottom:10em;
+	border-color:transparent;
+	height:25em;
+}
+
+.card-logo{
+	text-align:center;
+	font-size:5em;
+	color:rgb(233, 84, 32);
+	padding-top:0.5em;
+}

@@ -1,0 +1,25 @@
+<div class="card text-left">
+	<div class="card-block">
+		<div class="row" id="recoveryTitleDiv">
+			<div class="col-12">
+				<h6 id="recoveryTitle">Password reset</h6>
+			</div>
+		</div>
+		<div class="form-group">
+			<ng-template #popoverContent><span class="popoverMessage">{{popoverText}}</span></ng-template>
+			<label for="recovery1">Enter new password</label>
+			<input type="password" [(ngModel)]="pwd1" class="form-control" id="recovery1" 
+			(focus)="this.newPwdSubmit.close()" #newPwd>
+			<label for="recovery2">Confirm password</label>
+			<input type="password" [(ngModel)]="pwd2" class="form-control" id="recovery2" 
+			(focus)="this.newPwdSubmit.close()" #newPwdConfirmation>
+			<div class = "row" >
+				<div class="col-12" id="resetPwdDiv">
+					<input type="button" class="btn btn-custom btn-block" value="Confirm your new password" id="setPwdButton"
+					[ngbPopover]="popoverContent" placement="left" triggers="manual" (click)="this.sendNewPwdInfo()" 
+					#newPwdSubmit="ngbPopover">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

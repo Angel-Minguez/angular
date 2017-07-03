@@ -1,0 +1,91 @@
+.custom-modal .modal-content{
+	top:30vh;
+}
+.modal-body {
+	border-color:rgb(233, 84, 32);
+	background-size:cover;
+	background-color:white;
+	text-align:center;
+	border-radius:5px;
+}
+#recoveryButton{
+	margin-top:5%;
+}
+label{
+	margin-top:3%;
+	font-size:1em;
+	color: #aaa;
+}
+.btn-custom{
+	color:#aaa;
+	background-color:transparent;
+	border-width:2px;
+	border-color:rgb(233, 84, 32);
+	box-shadow: 0 0 5px rgba(233, 84, 32, 1);
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.btn-custom:hover{
+	color:white;
+	background-color:rgb(233, 84, 32);	
+}
+input[type=text]:focus, input[type=password]:focus {
+  	box-shadow: 0 0 5px rgba(233, 84, 32, 1);
+}
+input[type=checkbox].css-checkbox {
+	position:absolute; 
+	z-index:-1000; left:-1000px; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height:1px; width:1px; 
+	margin:-1px; 
+	padding:0; 
+	border:0;
+}
+input[type=checkbox].css-checkbox + label.css-label {
+	padding-left:23px;
+	height:18px; 
+	display:inline-block;
+	line-height:18px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:1em;
+	vertical-align:middle;
+	cursor:pointer;
+}
+input[type=checkbox].css-checkbox:checked + label.css-label {
+	background-position: 0 -18px;
+}
+.custom-file-control::after {
+	content: "Choose file...";
+}
+.custom-file-control::before {
+	content:"Browse";
+	color:#aaa;
+	background-color:transparent;
+	border-width:2px;
+	border-color:rgb(233, 84, 32);
+	box-shadow: 0 0 5px rgba(233, 84, 32, 1);
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.custom-file-control-hovered::before{
+	color:white;
+	background-color:rgb(233, 84, 32);
+}
+label.css-label {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+::-webkit-input-placeholder { color: #bbb; } 	/* WebKit */
+:-moz-placeholder { color: #bbb; } 				/* Firefox 18- */
+::-moz-placeholder { color: #bbb; } 			/* Firefox 19+ */
+:-ms-input-placeholder { color: #bbb; } 		/* IE 10+ */
+ngb-alert{
+	text-align:center;
+}
+.popoverMessage{
+	color:#666;
+}

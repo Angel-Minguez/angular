@@ -12,16 +12,25 @@ import { CurrentUserService } from '../current-user.service';
 })
 export class UserProfileComponent implements OnInit {
 	appUser: string;
+	onHoverFileButton:boolean;
 	constructor(private UserProfileModal: NgbActiveModal, 
 				private AppComService: AppComService,
 				private CurrentUserService : CurrentUserService) {
 		this.appUser = 'N/A';
+		this.onHoverFileButton=false;
 	}
 	onSubmit(userProfileForm: NgForm){
 	}
 	onChangeAvatarFile(event){
 		if(event.srcElement.files.length > 0) {
+			
 			console.log('File added: [%s]', event.srcElement.files[0].name);
+			if(event.srcElement.files[0].name.test(/(.jpeg|.jpg|.png|.bmp)$/)) {
+				
+			}
+			else {
+				
+			}
 			let avatarImgFile : File = event.srcElement.files[0];
 			let formData : FormData = new FormData();
 			formData.append('avatar', avatarImgFile, avatarImgFile.name);

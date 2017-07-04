@@ -12,9 +12,11 @@
 	margin-top:5%;
 }
 label{
-	margin-top:3%;
 	font-size:1em;
 	color: #aaa;
+}
+.card-block{
+	text-align:left;
 }
 .btn-custom{
 	color:#aaa;
@@ -56,7 +58,7 @@ input[type=checkbox].css-checkbox:checked + label.css-label {
 	background-position: 0 -18px;
 }
 .custom-file-input{
-	max-width:100%;
+	min-width:2000px;
 }
 .custom-file-control{
 	text-align:center;

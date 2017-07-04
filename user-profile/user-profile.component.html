@@ -22,13 +22,20 @@
 		<div class="card-block">
 			<form class="form form-group" #userProfileForm = "ngForm" (ngSubmit)="onSubmit(userProfileForm)">
 				<label for="avatarImg">Profile avatar</label>
-				<div class="input-group">
-					<label class="custom-file">
-						<input class="custom-file-input " type="file" name="avatarImg" id="avatarImg"(change)="onChangeAvatarFile($event)"
-						(mouseover)="onHoverFileButton=!onHoverFileButton" (mouseleave)="onHoverFileButton=!onHoverFileButton">
-						<span class="custom-file-control" fileName="avatarFileName" 
-						[ngClass]="{'custom-file-control-hovered':onHoverFileButton}"></span>
-					</label>
+				<div class="row">
+					<div class="col-10">
+						<div class="input-group">
+							<label class="custom-file">
+								<input class="custom-file-input " type="file" name="avatarImg" id="avatarImg"(change)="onChangeAvatarFile($event)"
+								(mouseover)="onHoverFileButton=!onHoverFileButton" (mouseleave)="onHoverFileButton=!onHoverFileButton">
+								<span class="custom-file-control" #avatarImg [attr.fileName]="avatarImgName"
+								[ngClass]="{'custom-file-control-hovered':onHoverFileButton}"></span>
+							</label>
+						</div>
+					</div>
+					<div class="col-2">
+						{{fileOK}}ok
+					</div>
 				</div>
 				<button class="btn btn-custom">Ok</button>
 			</form>

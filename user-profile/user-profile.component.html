@@ -5,17 +5,35 @@
     </button>
 </div>
 <div class="modal-body">
-    <form class="form form-group" #userProfileForm = "ngForm" (ngSubmit)="onSubmit(userProfileForm)">
-		<label>Profile avatar</label>
-		<label class="custom-file">
-			
-			<input class="custom-file-input" type="file" name="avatarImg" (change)="onChangeAvatarFile($event)"
-			(mouseover)="onHoverFileButton=!onHoverFileButton" (mouseleave)="onHoverFileButton=!onHoverFileButton">
-			<span class="custom-file-control" [ngClass]="{'custom-file-control-hovered':onHoverFileButton}"></span>
-			</label>
-	
-		<button class="btn btn-custom">Ok</button>
-	</form>
+	<div class="card text-center">
+		<div class="card-header">
+			<ul class="nav nav-pills card-header-pills">
+				<li class="nav-item">
+					<a class="nav-link active" href="#">Active</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">Disabled</a>
+				</li>
+			</ul>
+		</div>
+		<div class="card-block">
+			<form class="form form-group" #userProfileForm = "ngForm" (ngSubmit)="onSubmit(userProfileForm)">
+				<label for="avatarImg">Profile avatar</label>
+				<div class="input-group">
+					<label class="custom-file">
+						<input class="custom-file-input " type="file" name="avatarImg" id="avatarImg"(change)="onChangeAvatarFile($event)"
+						(mouseover)="onHoverFileButton=!onHoverFileButton" (mouseleave)="onHoverFileButton=!onHoverFileButton">
+						<span class="custom-file-control" fileName="avatarFileName" 
+						[ngClass]="{'custom-file-control-hovered':onHoverFileButton}"></span>
+					</label>
+				</div>
+				<button class="btn btn-custom">Ok</button>
+			</form>
+		</div>
+	</div>
 </div>
 <div class="modal-footer">
 	<button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>

@@ -12,7 +12,8 @@ import { CurrentUserService } from '../current-user.service';
 })
 export class UserProfileComponent implements OnInit {
 	appUser: string;
-	 avatarImgName: string;
+	avatarImgName: string;
+	validAvatarFile: boolean;
 	onHoverFileButton:boolean;
 	@ViewChild('avatarImg') avatarImg :  ElementRef;
 	constructor(private UserProfileModal: NgbActiveModal, 
@@ -20,7 +21,9 @@ export class UserProfileComponent implements OnInit {
 				private CurrentUserService : CurrentUserService) {
 		this.appUser = 'N/A';
 		this.onHoverFileButton=false;
-		this.avatarImgName = "Choose a local image file ...";
+		if (window.screen.width > 1000) this.avatarImgName = "Choose a local image file ...";
+		else this.avatarImgName = "Choose file ...";
+		this.validAvatarFile = false;
 	}
 	onSubmit(userProfileForm: NgForm){
 	}
@@ -28,12 +31,13 @@ export class UserProfileComponent implements OnInit {
 		if(event.srcElement.files.length > 0) {
 			console.log('File added: [%s]', event.srcElement.files[0].name);
 			this.avatarImgName = event.srcElement.files[0].name;
+			if(window.screen.width < 1000) truncate(event.srcElement.files[0].name
 			let regExp = new RegExp(/(.jpeg|.jpg|.png|.bmp)$/);
 			if(regExp.test(event.srcElement.files[0].name)) {
-				console.log('Fileok');
+				this.validAvatarFile=true;
 			}
 			else {
-				console.log('filenotok');
+				this.validAvatarFile=false;
 			}
 			let avatarImgFile : File = event.srcElement.files[0];
 			let formData : FormData = new FormData();

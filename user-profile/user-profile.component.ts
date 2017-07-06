@@ -30,8 +30,12 @@ export class UserProfileComponent implements OnInit {
 	onChangeAvatarFile(event){
 		if(event.srcElement.files.length > 0) {
 			console.log('File added: [%s]', event.srcElement.files[0].name);
-			this.avatarImgName = event.srcElement.files[0].name;
-			if(window.screen.width < 1000) truncate(event.srcElement.files[0].name
+			
+			if(window.screen.width < 1000) 
+				if(event.srcElement.files[0].name.length < 20)this.avatarImgName = event.srcElement.files[0].name;
+				else this.avatarImgName = event.srcElement.files[0].name.slice(0,17)+' ...';
+			else if(event.srcElement.files[0].name.length < 32) this.avatarImgName = event.srcElement.files[0].name;
+				else this.avatarImgName = event.srcElement.files[0].name.slice(0,29)+' ...';
 			let regExp = new RegExp(/(.jpeg|.jpg|.png|.bmp)$/);
 			if(regExp.test(event.srcElement.files[0].name)) {
 				this.validAvatarFile=true;

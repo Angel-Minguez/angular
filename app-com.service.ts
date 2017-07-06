@@ -11,7 +11,7 @@ export class AppComService {
 	}
 	sendAvatarImg(formData:FormData){
 		let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+       /* headers.append('Content-Type', 'undefined');*/
 		let options = new RequestOptions({method: RequestMethod.Post, headers : headers , withCredentials : true});
 		return this.http.post(this.avatarUrl, formData, options).map((_res)=> _res.json());
 	};

@@ -98,6 +98,9 @@ input[type=checkbox].css-checkbox:checked + label.css-label {
 	color:grey;
 	float:left;
 }
+#fileUploadFeedback{
+	padding-left:1em;
+}
 label.css-label {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;

@@ -8,7 +8,7 @@
 		<ul *ngIf="appUser!='N/A'" class="navbar-nav">
 			<li li class="landingNavItem"></li>
 			<li li class="landingNavItem"></li>
-			<li class="landingNavItem" id="userLogoContainer"><div #userLogo id="userLogo"></div></li>
+			<li class="landingNavItem" id="userLogoContainer"><div background-image="static/avatars/SindaavatarImg" #userLogo id="userLogo"></div></li>
 			<div id="userDropdown" ngbDropdown #userDropdown = ngbDropdown>
 				<button class="btn btn-custom" id="userDropdownButton" ngbDropdownToggle
 				(click)="activateUserDropdown()" (focusout)="dropdownActivated=false" 
